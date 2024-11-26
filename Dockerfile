@@ -15,10 +15,10 @@ COPY ["pyproject.toml", "poetry.lock", "./"]
 # Install dependencies using poetry
 RUN poetry install --no-dev --no-interaction --no-root
 
-COPY ["src/predict.py", "movie_rating_pred_v1.bin", "./"]
+COPY ["src/predict2.py", "movie_rating_pred_v2.bin", "./"]
 
 EXPOSE 9696
 
-ENTRYPOINT ["poetry", "run", "gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
+ENTRYPOINT ["poetry", "run", "gunicorn", "--bind=0.0.0.0:9696", "predict2:app"]
 
 
