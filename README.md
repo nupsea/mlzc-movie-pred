@@ -13,6 +13,27 @@ The dataset used for this project is sourced from Kaggle:
 - **Source**: [TMDB Movies Dataset 2023 - 930k Movies](https://www.kaggle.com/datasets/asaniczka/tmdb-movies-dataset-2023-930k-movies)
 - **Description**: This dataset contains metadata of approximately 930,000 movies, including features like movie titles, production companies, genres, release dates, budgets, and more.
 
+### Download Data
+
+Since the dataset is quite large, download it directly from Kaggle. You can either use the command below or manually download the available zip file.
+
+```python
+import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download("asaniczka/tmdb-movies-dataset-2023-930k-movies")
+
+print("Path to dataset files:", path)
+```
+
+After downloading, copy the movie dataset CSV to your working directory:
+
+```commandline
+cp <path-to-dataset-files>/<movie-file>.csv <home-dir>/tmdb-movies.csv
+```
+
+> Ensure that the `tmdb-movies.csv` dataset is present before proceeding with the next steps.
+
 ## Setup / Installation
 
 ### Clone the Repository
@@ -35,6 +56,28 @@ poetry install
 ```
 
 This command will create an isolated environment and install all required packages, enabling you to run the notebooks and the Flask API server.
+
+
+## About the Project
+
+### Version History
+
+- **Version 1**:
+  - **Analysis**: `movies.ipynb` contains the initial data analysis and model development. This version did not generalize well during testing.
+  - **Model File**: [movie_rating_pred_v1.bin](movie_rating_pred_v1.bin)
+  - **Training Script**: `src/train.py`
+  - **Prediction Script**: `src/predict.py`
+
+- **Version 2**:
+  - **Refined Analysis**: `movies_redefined.ipynb` includes improvements related to feature engineering and code structure. Worked further on improving the model with XGBoost.
+  - **Model File**: [movie_rating_pred_v2.bin](movie_rating_pred_v2.bin)
+  - **Training Script**: `src/train2.py`
+  - **Prediction Script**: `src/predict2.py`
+
+> **Note**: The Docker setup currently points to Version 2 of the model for serving predictions.
+
+
+
 
 ## Running with Docker
 

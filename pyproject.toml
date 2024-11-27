@@ -1,8 +1,9 @@
 [tool.poetry]
-name = "mlzc-reg-movies"
+name = "mlzc-movie-pred"
 version = "0.1.0"
-description = "Regression model for Movies"
-authors = ["anse"]
+description = "Movie rating predictions for TMDB dataset"
+authors = ["nupsea"]
+license = "MIT Licence"
 readme = "README.md"
 
 [tool.poetry.dependencies]
