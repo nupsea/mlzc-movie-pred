@@ -41,7 +41,7 @@ First, clone this repository to your local machine and navigate to it:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd movie-rating-predictor
+cd mlzc-movie-pred
 ```
 
 ### Install Dependencies
